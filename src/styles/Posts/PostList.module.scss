@@ -1,0 +1,74 @@
+@import "../Utils";
+
+.welcome {
+  text-align: center;
+  padding: 6rem 25vw;
+  background-color: $veryPaleGreen;
+
+  @include responsive(tablet) {
+    padding: 5rem 18vw;
+  }
+  @include responsive(mobile) {
+    padding: 4rem 15vw;
+  }
+}
+
+.welcome-title {
+  font-size: 2.75rem;
+  font-weight: bold;
+  padding: 1rem 0;
+
+  @include responsive(tablet) {
+    font-size: 2.25rem;
+  }
+}
+
+.welcome-description {
+  color: $lightGrey;
+  line-height: 1.5;
+}
+
+.post-list {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+
+  @include responsive(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.creator-info {
+  display: flex;
+  align-items: center;
+}
+
+.creator-name {
+  padding-left: 0.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: $lightGrey;
+}
+
+.post-thumbnail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: $veryPaleGreen;
+  border-radius: 0.5rem;
+
+  .content {
+    color: $lightGrey;
+  }
+
+  button {
+    width: 45%;
+  }
+}

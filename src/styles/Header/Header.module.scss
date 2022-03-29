@@ -1,0 +1,112 @@
+@import "../Utils";
+
+//the header stays fixed as the user scrolls through the page
+.header {
+  position: fixed;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  display: flex;
+  width: 100%;
+  background-color: $veryPaleGreen;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  &:hover {
+    transform: scale(1.3);
+  }
+  transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: 50% 50%;
+  cursor: pointer !important;
+  text {
+    font-family: "Parisienne", cursive;
+  }
+
+  @include responsive(mobile) {
+    font-size: 0.75rem;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+
+  &:hover {
+    color: $baseGreen;
+    border-bottom-color: $baseGreen;
+  }
+}
+
+.hamburger {
+  width: 2rem;
+  height: 2rem;
+
+  &.open {
+    > span:first-child {
+      transform-origin: -0.15rem;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in-out;
+    }
+    > span:nth-child(2) {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    > span:last-child {
+      transform-origin: 0.15rem;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  span {
+    display: block;
+    width: 2rem;
+    height: 0.125rem;
+    background-color: black;
+  }
+}
+
+.menu {
+  position: absolute;
+  padding-left: 0;
+  top: -200vw;
+  margin-top: 50px;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 50vh;
+
+  > * {
+    transform: translateY(0.5rem);
+    height: 2.5rem;
+    width: 100%;
+    border: 1px solid $baseGreen;
+    text-align: center;
+  }
+
+  > *:last-child {
+    text-align: left;
+    padding-left: calc(50% - 65px);
+  }
+
+  &.open {
+    transform: translateY(200vw);
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    background-color: rgb(170, 175, 243);
+  }
+}

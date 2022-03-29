@@ -1,0 +1,70 @@
+@mixin responsive($breakpoint) {
+  // $breakpoint is simply a variable that can have several values
+
+  @if $breakpoint==tablet {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==mobile {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+$veryPaleGreen: #f4feff;
+$baseGreen: #3ae386;
+$lightGrey: #7b7b7b;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+
+//button has global styling, because it can be used anywhere
+.button {
+  height: 2.5rem;
+  font-size: 1rem;
+  color: black;
+  background-color: $baseGreen;
+  padding: 0.875rem 2vw;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.75;
+  }
+}
+
+.container {
+  padding-left: 13.5vw;
+  padding-right: 13.5vw;
+
+  @include responsive(mobile) {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  @include responsive(tablet) {
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+  }
+}
+
+.mobile-invisible {
+  @include responsive(mobile) {
+    display: none;
+  }
+}

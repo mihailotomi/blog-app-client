@@ -1,0 +1,42 @@
+@import "../Utils";
+
+.post-create {
+  padding-top: 14vh;
+}
+
+.form {
+  background-color: $veryPaleGreen;
+  padding: 2rem 12vw;
+  border: 1px solid $baseGreen;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+
+  @include responsive(tablet) {
+    padding: 1rem 8vw;
+  }
+
+  @include responsive(mobile) {
+    padding: 1rem 2.5vw;
+  }
+
+  button {
+    margin-top: 0.75rem;
+  }
+}
+
+.input {
+  width: 100%;
+  margin: 0.5rem 0;
+  height: 4vh;
+  border: 1px solid rgb(161, 161, 161);
+  border-radius: 4px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: black;
+    box-shadow: 1px 1px 1px 1px $baseGreen;
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
