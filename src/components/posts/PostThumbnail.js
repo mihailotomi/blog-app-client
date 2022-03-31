@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import Button from "../Button";
 import { users } from "../../actions";
+import { renderCreationTime } from "../../utils";
 
 import classes from "../../styles/Posts/PostList.module.scss";
 
-const PostThumbnail = ({ title, content, creatorId, auth, id }) => {
+const PostThumbnail = ({ title, content, creatorId, auth, id, createdAt }) => {
   const [creatorName, setCreatorName] = useState(" ");
   const navigate = useNavigate();
+
+  renderCreationTime(createdAt);
 
   useEffect(() => {
     async function getCreator() {
@@ -31,20 +34,14 @@ const PostThumbnail = ({ title, content, creatorId, auth, id }) => {
         />
         <h3 className={`${classes["creator-name"]}`}>{creatorName}</h3>
       </div>
-      <h2>{title}</h2>
+      <span className="creation-time">{renderCreationTime(createdAt)}</span>
+      <Link to={`/posts/show/${id}`}>
+        <h2>{title}</h2>
+      </Link>
       <p className={`${classes.content}`}>
         {content.slice(0, 99)}
         {content.length > 100 ? "..." : ""}
       </p>
-
-      <Button
-        label={auth.userId === creatorId ? "Promeni" : "Procitaj"}
-        onClick={() => {
-          if (auth.userId === creatorId) {
-            navigate(`/posts/update/${id}`);
-          }
-        }}
-      />
     </article>
   );
 };

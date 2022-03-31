@@ -26,6 +26,11 @@ $lightGrey: #7b7b7b;
   font-family: "Fredoka", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 //button has global styling, because it can be used anywhere
 .button {
   height: 2.5rem;
@@ -67,4 +72,9 @@ $lightGrey: #7b7b7b;
   @include responsive(mobile) {
     display: none;
   }
+}
+
+.creation-time {
+  font-size: 0.75rem;
+  color: $lightGrey;
 }

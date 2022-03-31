@@ -5,6 +5,7 @@ import Header from "./components/header/Header";
 import PostsHome from "./components/posts/PostsHome";
 import PostCreate from "./components/posts/PostCreate";
 import PostUpdate from "./components/posts/PostUpdate";
+import PostShow from "./components/posts/PostShow";
 
 import "./styles/Utils.scss";
 
@@ -15,7 +16,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<PostsHome />}></Route>
         <Route path="/posts/new" element={<PostCreate />}></Route>
-        <Route path="posts/update/:id" element={<PostUpdate />}></Route>
+        <Route path="/posts/update/:id" element={<PostUpdate />}></Route>
+        <Route path="/posts/show/:id" element={<PostShow />}></Route>
       </Routes>
     </main>
   );

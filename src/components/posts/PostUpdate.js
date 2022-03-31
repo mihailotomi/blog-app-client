@@ -10,26 +10,30 @@ const PostUpdate = ({ updatePost, auth, fetchPost, posts }) => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  useEffect(() => {
-    if (!auth.isSignedIn) {
-      navigate("/");
-    }
-    if (posts[id] && posts[id].userId !== auth.userId) {
-      navigate("/");
-    }
-  }, [auth]);
-
   ////temporary state to control the inputs
   const [title, changeTitle] = useState("");
   const [content, changeContent] = useState("");
 
   useEffect(() => {
     if (id) {
+      //with react-router, each component must fetch its own records
       fetchPost(id);
     }
   }, []);
 
   useEffect(() => {
+    ////if the user is not signed in, he can't update posts
+    if (!auth.isSignedIn) {
+      navigate("/");
+    }
+    ////user can't update a post he didn't make
+    if (posts[id] && posts[id].userId !== auth.userId) {
+      navigate("/");
+    }
+  }, [auth]);
+
+  useEffect(() => {
+    ////every time the posts change, change the state
     if (posts[id]) {
       changeTitle(posts[id].title);
       changeContent(posts[id].content);

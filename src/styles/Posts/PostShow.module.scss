@@ -1,0 +1,33 @@
+@import "../Utils";
+
+.post {
+  padding: 2vh 10vw;
+  display: flex;
+  flex-direction: column;
+  background: $veryPaleGreen;
+  border-radius: 1rem;
+}
+
+.creator-info {
+  display: flex;
+  align-items: center;
+}
+
+.creator-name {
+  padding-left: 0.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: $lightGrey;
+}
+
+.title {
+  padding-top: 0.5rem;
+  font-size: 2rem;
+}
+
+.content {
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+}

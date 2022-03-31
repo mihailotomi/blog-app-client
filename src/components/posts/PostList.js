@@ -26,6 +26,7 @@ const PostList = ({ fetchPosts, posts }) => {
             creatorId={post.userId}
             key={post._id}
             id={post._id}
+            createdAt={post.createdAt}
           />
         );
       });
