@@ -41,12 +41,14 @@ export const createPost =
 
 //optionally provide filter and page
 export const fetchPosts =
-  ({ filter, page } = {}) =>
+  ({ filter, page = 0, sortBy = "createdAt", sortOrder = "-1" } = {}) =>
   async (dispatch, getState) => {
     const response = await posts.get("/", {
       params: {
         filter,
         page,
+        sortBy,
+        sortOrder,
       },
     });
     dispatch({

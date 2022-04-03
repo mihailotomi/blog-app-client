@@ -9,16 +9,16 @@ import { fetchPosts } from "../../actions";
 // styles
 import classes from "../../styles/Posts/PostList.module.scss";
 
-const PostList = ({ fetchPosts, posts }) => {
+const PostList = ({ fetchPosts, posts, sorter, sortOrder }) => {
   //#with react-router, each component must fetch its own records
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    fetchPosts({ sortBy: sorter, sortOrder });
+  }, [sortOrder, sorter]);
 
   //if the posts are successfully fetched, turn them into a list of jsx blocks
   const renderPostList = () => {
     if (posts) {
-      return posts.map((post) => {
+      return posts.map((post, index) => {
         return (
           <PostThumbnail
             title={post.title}

@@ -14,7 +14,7 @@ import Button from "../Button";
 import classes from "../../styles/Posts/PostShow.module.scss";
 
 const PostShow = ({ fetchPost, posts, auth }) => {
-  //destructure the id of of URL parameters
+  ////destructure the id of of URL parameters
   const { id } = useParams();
   const navigate = useNavigate();
   const [creatorName, setCreatorName] = useState(" ");
@@ -24,20 +24,21 @@ const PostShow = ({ fetchPost, posts, auth }) => {
       //with react-router, each component must fetch its own records
       fetchPost(id);
     }
-    //only on first render
+    ////only on first render
   }, []);
 
   useEffect(() => {
-    async function getCreator() {
+    ////fetch the name of thee user
+    async function getCreator(id) {
       const creator = await users.get("/", {
-        params: { id: posts[id].userId },
+        params: { id },
       });
       if (creator) {
         setCreatorName(creator.data.userName);
       }
     }
     if (posts[id]) {
-      getCreator();
+      getCreator(posts[id].userId);
     }
   }, [creatorName]);
 

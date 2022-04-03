@@ -6,6 +6,14 @@
   flex-direction: column;
   background: $veryPaleGreen;
   border-radius: 1rem;
+
+  @include responsive(tablet) {
+    padding: 2vh 5vw;
+  }
+
+  @include responsive(mobile) {
+    padding: 2vh 2vw;
+  }
 }
 
 .creator-info {

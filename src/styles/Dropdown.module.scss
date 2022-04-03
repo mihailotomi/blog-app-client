@@ -1,0 +1,46 @@
+@import "./Utils.scss";
+
+.dropdown {
+  border: 1px solid $lightGrey;
+  width: auto;
+  border-radius: 0.25rem;
+  font-size: 1.125rem;
+  margin-right: 1rem;
+  transition: all 500ms ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.open {
+    border-color: $baseGreen;
+    transition: all 500ms ease-in-out;
+  }
+}
+
+.dropdown-option {
+  display: flex;
+  border-top: 1px dashed $baseGreen;
+  cursor: pointer;
+
+  &:first-child {
+    border-top: none;
+  }
+}
+
+.svg {
+  fill: $lightGrey;
+  transform: rotate(90deg);
+  transition: all 500ms ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.open {
+    fill: $baseGreen;
+  }
+
+  &.open {
+    transform: rotate(0deg);
+    transition: all 500ms ease-in-out;
+  }
+}

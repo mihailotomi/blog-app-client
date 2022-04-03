@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button {
+  height: 2.5rem;
+  font-size: 1rem;
+  color: black;
+  background-color: #3ae386;
+  padding: 0.875rem 2vw;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover, .button:active, .button:focus {
+  opacity: 0.75;
+}
+
+.container {
+  padding-left: 13.5vw;
+  padding-right: 13.5vw;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mobile-invisible {
+    display: none;
+  }
+}
+
+.creation-time {
+  font-size: 0.75rem;
+  color: #7b7b7b;
+}
+
+.dropdown {
+  border: 1px solid #7b7b7b;
+  width: auto;
+  border-radius: 0.25rem;
+  font-size: 1.125rem;
+  margin-right: 1rem;
+  transition: all 500ms ease-in-out;
+}
+
+.dropdown:hover, .dropdown:active, .dropdown:focus, .dropdown.open {
+  border-color: #3ae386;
+  transition: all 500ms ease-in-out;
+}
+
+.dropdown-option {
+  display: flex;
+  border-top: 1px dashed #3ae386;
+  cursor: pointer;
+}
+
+.dropdown-option:first-child {
+  border-top: none;
+}
+
+.svg {
+  fill: #7b7b7b;
+  transform: rotate(90deg);
+  transition: all 500ms ease-in-out;
+}
+
+.svg:hover, .svg:active, .svg:focus, .svg.open {
+  fill: #3ae386;
+}
+
+.svg.open {
+  transform: rotate(0deg);
+  transition: all 500ms ease-in-out;
+}
+/*# sourceMappingURL=Dropdown.module.css.map */

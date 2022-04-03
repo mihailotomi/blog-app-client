@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button {
+  height: 2.5rem;
+  font-size: 1rem;
+  color: black;
+  background-color: #3ae386;
+  padding: 0.875rem 2vw;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover, .button:active, .button:focus {
+  opacity: 0.75;
+}
+
+.container {
+  padding-left: 13.5vw;
+  padding-right: 13.5vw;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mobile-invisible {
+    display: none;
+  }
+}
+
+.creation-time {
+  font-size: 0.75rem;
+  color: #7b7b7b;
+}
+
+.post {
+  padding: 2vh 10vw;
+  display: flex;
+  flex-direction: column;
+  background: #f4feff;
+  border-radius: 1rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .post {
+    padding: 2vh 5vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .post {
+    padding: 2vh 2vw;
+  }
+}
+
+.creator-info {
+  display: flex;
+  align-items: center;
+}
+
+.creator-name {
+  padding-left: 0.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #7b7b7b;
+}
+
+.title {
+  padding-top: 0.5rem;
+  font-size: 2rem;
+}
+
+.content {
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+/*# sourceMappingURL=PostShow.module.css.map */
