@@ -6,6 +6,7 @@ import PostsHome from "./components/posts/PostsHome";
 import PostCreate from "./components/posts/PostCreate";
 import PostUpdate from "./components/posts/PostUpdate";
 import PostShow from "./components/posts/PostShow";
+import PostDelete from "./components/posts/PostDelete";
 
 import "./styles/Utils.scss";
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/posts/new" element={<PostCreate />}></Route>
         <Route path="/posts/update/:id" element={<PostUpdate />}></Route>
         <Route path="/posts/show/:id" element={<PostShow />}></Route>
+        <Route path="/posts/delete/:id" element={<PostDelete />}></Route>
       </Routes>
     </main>
   );

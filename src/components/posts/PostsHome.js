@@ -10,8 +10,8 @@ const sorters = {
 };
 
 const sortOrders = {
-  rastuce: "1",
   opadajuce: "-1",
+  rastuce: "1",
 };
 
 const PostsHome = () => {

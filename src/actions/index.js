@@ -77,7 +77,8 @@ export const updatePost =
   };
 
 export const deletePost = (id, userId) => async (dispatch) => {
-  await posts.delete(`/`, { id, userId });
+  const response = await posts.delete(`/`, { data: { id, userId } });
+  console.log(response);
   dispatch({
     type: "DELETE_STREAM",
     payload: id,

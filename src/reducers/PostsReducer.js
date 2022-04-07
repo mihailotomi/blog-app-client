@@ -24,10 +24,10 @@ const PostsReducer = (state = INITIAL_STATE, action) => {
     case "UPDATE_POST":
       return { ...state, [action.payload._id]: action.payload };
 
-    case "DELETE_STREAM":
+    case "DELETE_POST":
       ////must copy the object, so we don't mutate it
       const newState = { ...state };
-      ////dynamically delete the atribute(stream) associated with the id
+      ////dynamically delete the atribute(post) associated with the id
       ////the payload doesn't contain the id, it is the id
       delete newState[action.payload];
       return newState;

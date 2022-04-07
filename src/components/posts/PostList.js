@@ -13,6 +13,11 @@ const PostList = ({ fetchPosts, posts, sorter, sortOrder }) => {
   //#with react-router, each component must fetch its own records
   useEffect(() => {
     fetchPosts({ sortBy: sorter, sortOrder });
+
+    ////refetch after half a second, in case there are changes on the server
+    setTimeout(() => {
+      fetchPosts({ sortOrder, sortBy: sorter });
+    }, 500);
   }, [sortOrder, sorter]);
 
   //if the posts are successfully fetched, turn them into a list of jsx blocks

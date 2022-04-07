@@ -39,3 +39,12 @@
   padding-bottom: 0.5rem;
   font-size: 1.25rem;
 }
+
+.button-wrapper {
+  align-self: flex-end;
+  display: inline-flex;
+
+  > * {
+    margin: 0.5rem;
+  }
+}

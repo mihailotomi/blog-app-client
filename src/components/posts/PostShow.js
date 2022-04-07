@@ -57,11 +57,17 @@ const PostShow = ({ fetchPost, posts, auth }) => {
   const renderUpdateButton = () => {
     if (auth.userId === posts[id].userId) {
       return (
-        <span style={{ alignSelf: "flex-end" }}>
+        <span className={classes["button-wrapper"]}>
           <Button
             label={"Izmeni"}
             onClick={() => {
               navigate(`/posts/update/${posts[id]._id}`);
+            }}
+          />
+          <Button
+            label={"Ukloni"}
+            onClick={() => {
+              navigate(`/posts/delete/${posts[id]._id}`);
             }}
           />
         </span>
